@@ -1,4 +1,11 @@
 version: '3.8'
+
+
+networks:
+  proxiable:
+    name: proxiable
+    external: true
+  
 services:
   nginx:
     image: nginx:1-alpine
