@@ -1,9 +1,12 @@
-version: "3.9"
+version: '3.8'
+networks:
+  proxiable:
+    name: proxiable
+    external: true
 services:
-
-  node-application:
-    build: .
-    container_name: node-application
+  nginx:
+    image: nginx:alpine
     ports:
-      - "3000:3000"
-    restart: always
+      - 8089:80
+    volumes:
+      - .:/usr/share/nginx/html
